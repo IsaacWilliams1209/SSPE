@@ -10,11 +10,11 @@
 					</td>
 				    <td style='text-align:left;'>
                         <label class='sheet-nameRankXp'>Inititave</label>
-                        <button type='roll' name='roll_Inititave' value='[[{1d20 + @agility} - 10/2'/>
+                        <button type='roll' name='roll_Inititave' value='[[{1d20 + DaFuntion(@{dexterity}]]'/>
 					</td>
 					<td style='text-align:left;'>
 						<label class='sheet-nameRankXp'>Health</label>
-                        <input type="number" name="attr_health" value="DO ROLL STUFF HERE"/>
+                        <input type="number" name="attr_health" value="20+ ((@{constitution} -10)/2)"/>
 					</td>
 					<td style='text-align:left;'>
 						<label class='sheet-nameRankXp'>Damage Tolerance</label>
@@ -30,6 +30,20 @@
     
     </div>
     
+	<script>
+	function DaFuntion(roll)
+	{
+	
+		var a = floor((( roll - 10)/2));
+		
+		return a;
+	}
+	</script>
+	
+	
+	
+	
+	
     <hr/>
     
     <div class="sheet-3colrow">
