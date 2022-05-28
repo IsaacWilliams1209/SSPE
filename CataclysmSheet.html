@@ -60,6 +60,8 @@
 <span class="sheet-tab sheet-tab1" style='line-height: 20px;'>Attributes</span>
 <input type="radio" class="sheet-tab sheet-tab2" name="attr_core-tab" value="2" title="Skills" /> 
 <span class="sheet-tab sheet-tab2" style='line-height: 20px;'>Skills</span>
+<input type="radio" class="sheet-tab sheet-tab4" name="attr_core-tab" value="5" title="Equipment" /> 
+<span class="sheet-tab sheet-tab4" style='line-height: 20px;'>Equipment</span>
 <input type="radio" class="sheet-tab sheet-tab5" name="attr_core-tab" value="5" title="Combat" /> 
 <span class="sheet-tab sheet-tab5" style='line-height: 20px;'>Combat</span>
 <input type="radio" class="sheet-tab sheet-tab99" name="attr_core-tab" value="99" title="All" />
@@ -110,15 +112,15 @@
                     <th>Attribute</th>
                 </tr>
                 <tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Instict-Save_roll" value="[[d20 + floor(([[@{Ins}]] - 10) /2) ]]" title="Instinct-Save">Will</button></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Instict-Save_roll" value="[[d20 + floor(([[@{Ins}]] - 10) /2) + @{Ins-Saving-Throw-Misc} ]]" title="Instinct-Save">Will</button></th>
                     <th><input type="number" class="sheet-Current" name="attr_Ins-Saving-Throw-Misc" value="0"/></th>
                 </tr>
                 <tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Dexterity-Save_roll" value="[[d20 + floor(([[@{Dex}]] - 10) /2) ]]" title="Dexterity-Save">Reflex</button></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Dexterity-Save_roll" value="[[d20 + floor(([[@{Dex}]] - 10) /2) + @(Dex-Saving-Throw-Misc} ]]" title="Dexterity-Save">Reflex</button></th>
                     <th><input type="number" class="sheet-Current" name="attr_Dex-Saving-Throw-Misc" value="0"/></th>
                 </tr>
                 <tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Constitution-Save_roll" value="[[d20 + floor(([[@{Con}]] - 10) /2) ]]" title="Constitution-Save">Fortitude</button></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Constitution-Save_roll" value="[[d20 + floor(([[@{Con}]] - 10) /2) + @(Con-Saving-Throw-Misc} ]]" title="Constitution-Save">Fortitude</button></th>
                     <th><input type="number" class="sheet-Current" name="attr_Con-Saving-Throw-Misc" value="0"/></th>
                 </tr>
             </table>
@@ -130,128 +132,102 @@
     <div class='sheet-2colrow'>
         <h3>Skills</h3>
         <div class='sheet-col'>
-            <h4>Everyman Skills</h4>
             <table class="sheet-table">
                 <tr>
                     <th>Skill</th>
                     <th>Level</th>
-                    <th>Attribute</th>
-                    <th>Misc</th>
                 </tr>
                 <tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Science-skill_roll" value="&{template:skill}{{skill= Science}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Science-Attribute} - 10) /2  + @{Science-Misc} ]] }}">Science</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Science-Attribute" value="@{Int}"/>Int</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Science-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Science-skill_roll" value="&{template:skill}{{skill= Science}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Int} - 10) /2)) + @{Science-Level}) ]] }}">Science (int)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Science-Level" value="0"/></th>
                 </tr>
                 <tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Language-skill_roll" value="&{template:skill}{{skill= Language}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Language-Attribute} - 10) /2  + @{Language-Misc} ]] }}">Language</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Language-Attribute" value="@{Int}"/>Int</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Language-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Computers-skill_roll" value="&{template:skill}{{skill= Computers}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Int} - 10) /2)) + @{Computers-Level}) ]] }}">Computers (int)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Computers-Level" value="0"/></th>
                 </tr>
                 <tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Computers-skill_roll" value="&{template:skill}{{skill= Computers}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Computers-Attribute} - 10) /2  + @{Computers-Misc} ]] }}">Computers</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Computers-Attribute" value="@{Int}"/>Int</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Computers-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Investigation-skill_roll" value="&{template:skill}{{skill= Investigation}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Int} - 10) /2)) + @{Investigation-Level}) ]] }}">Investigation (int)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Investigation-Level" value="0"/></th>
                 </tr>
                 <tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Investigation-skill_roll" value="&{template:skill}{{skill= Investigation}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Investigation-Attribute} - 10) /2  + @{Investigation-Misc} ]] }}">Investigation</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Investigation-Attribute" value="@{Int}"/>Int</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Investigation-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Medicine-skill_roll" value="&{template:skill}{{skill= Medicine}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Int} - 10) /2)) + @{Medicine-Level}) ]] }}">Medicine (int)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Medicine-Level" value="0"/></th>
                 </tr>
                 <tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Medicine-skill_roll" value="&{template:skill}{{skill= Medicine}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Medicine-Attribute} - 10) /2  + @{Medicine-Misc} ]] }}">Medicine</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Medicine-Attribute" value="@{Int}"/>Int</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Medicine-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Engineering-skill_roll" value="&{template:skill}{{skill= Engineering}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Int} - 10) /2)) + @{Engineering-Level}) ]] }}">Engineering (int)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Engineering-Level" value="0"/></th>
                 </tr>
                 <tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Engineering-skill_roll" value="&{template:skill}{{skill= Engineering}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Engineering-Attribute} - 10) /2  + @{Engineering-Misc} ]] }}">Engineering</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Engineering-Attribute" value="@{Int}"/>Int</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Engineering-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Perception-skill_roll" value="&{template:skill}{{skill= Perception}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Ins} - 10) /2)) + @{Perception-Level}) ]] }}">Perception (ins)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Perception-Level" value="0"/></th>
                 </tr>
                 <tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Perception-skill_roll" value="&{template:skill}{{skill= Perception}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Perception-Attribute} - 10) /2  + @{Perception-Misc} ]] }}">Perception</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Perception-Attribute" value="@{Ins}"/>Ins</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Perception-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Survival-skill_roll" value="&{template:skill}{{skill= Survival}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Ins} - 10) /2)) + @{Survival-Level}) ]] }}">Survival (ins)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Survival-Level" value="0"/></th>
                 </tr>
                 <tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Survival-skill_roll" value="&{template:skill}{{skill= Survial}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Survial-Attribute} - 10) /2  + @{Survial-Misc} ]] }}">Survial</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Survival-Attribute" value="@{Ins}"/>Ins</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Survival-Misc" value="0"/></th>
-                </tr>
-                <tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Insight-skill_roll" value="&{template:skill}{{skill= Insight}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Insight-Attribute} - 10) /2  + @{Insight-Misc} ]] }}">Insight</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Insight-Attribute" value="@{Ins}"/>Ins</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Insight-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Insight-skill_roll" value="&{template:skill}{{skill= Insight}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Ins} - 10) /2)) + @{Insight-Level}) ]] }}">Insight (ins)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Insight-Level" value="0"/></th>
                 </tr>
 				<tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Acrobatics-skill_roll" value="&{template:skill}{{skill= Acrobatics}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Acrobatics-Attribute} - 10) /2  + @{Acrobatics-Misc} ]] }}">Acrobatics</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Acrobatics-Attribute" value="@{Dex}"/>Dex</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Acrobatics-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Acrobatics-skill_roll" value="&{template:skill}{{skill= Acrobatics}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Dex} - 10) /2)) + @{Acrobatics-Level}) ]] }}">Acrobatics (dex)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Acrobatics-Level" value="0"/></th>
                 </tr>
 				<tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Stealth-skill_roll" value="&{template:skill}{{skill= Stealth}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Stealth-Attribute} - 10) /2  + @{Stealth-Misc} ]] }}">Stealth</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Stealth-Attribute" value="@{Dex}"/>Dex</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Stealth-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Stealth-skill_roll" value="&{template:skill}{{skill= Stealth}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Dex} - 10) /2)) + @{Stealth-Level}) ]] }}">Stealth (dex)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Stealth-Level" value="0"/></th>
                 </tr>
 				<tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Sleight-of-Hand-skill_roll" value="&{template:skill}{{skill= Sleight-of-Hand}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Sleight-of-Hand-Attribute} - 10) /2  + @{Sleight-of-Hand-Misc} ]] }}">Sleight of Hand</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Sleight-of-Hand-Attribute" value="@{Dex}"/>Dex</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Sleight-of-Hand-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Slight-of-Hand-skill_roll" value="&{template:skill}{{skill= Slight-of-Hand}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Dex} - 10) /2)) + @{Slight-of-Hand-Level}) ]] }}">Slight-of-Hand (dex)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Slight-of-Hand-Level" value="0"/></th>
                 </tr>
 				<tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Athletics-skill_roll" value="&{template:skill}{{skill= Athletics}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Athletics-Attribute} - 10) /2  + @{Athletics-Misc} ]] }}">Athletics</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Athletics-Attribute" value="@{Str}"/>Str</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Athletics-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Athletics-skill_roll" value="&{template:skill}{{skill= Athletics}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Str} - 10) /2)) + @{Acrobatics-Level}) ]] }}">Acrobatics (str)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Athletics-Level" value="0"/></th>
                 </tr>
 				<tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Persuasion-skill_roll" value="&{template:skill}{{skill= Persuasion}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Persuasion-Attribute} - 10) /2  + @{Persuasion-Misc} ]] }}">Persuasion</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Persuasion-Attribute" value="@{Cha}"/>Cha</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Persuasion-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Persuasion-skill_roll" value="&{template:skill}{{skill= Persuasion}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Cha} - 10) /2)) + @{Persuasion-Level}) ]] }}">Persuasion (cha)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Persuasion-Level" value="0"/></th>
                 </tr>
 				<tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Diplomacy-skill_roll" value="&{template:skill}{{skill= Diplomacy}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Diplomacy-Attribute} - 10) /2  + @{Diplomacy-Misc} ]] }}">Diplomacy</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Diplomacy-Attribute" value="@{Cha}"/>Cha</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Diplomacy-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Diplomacy-skill_roll" value="&{template:skill}{{skill= Diplomacy}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Cha} - 10) /2)) + @{Diplomacy-Level}) ]] }}">Diplomacy (cha)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Diplomacy-Level" value="0"/></th>
                 </tr>
 				<tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Barter-skill_roll" value="&{template:skill}{{skill= Barter}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Barter-Attribute} - 10) /2  + @{Barter-Misc} ]] }}">Barter</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Barter-Attribute" value="@{Cha}"/>Cha</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Barter-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Bater-skill_roll" value="&{template:skill}{{skill= Bater}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Cha} - 10) /2)) + @{Bater-Level}) ]] }}">Bater (cha)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Bater-Level" value="0"/></th>
                 </tr>
 				<tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Intimidation-skill_roll" value="&{template:skill}{{skill= Intimidation}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Intimidation-Attribute} - 10) /2  + @{Intimidation-Misc} ]] }}">Persuasion</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Intimidation-Attribute" value="@{Cha}"/>Cha</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Intimidation-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Intimidation-skill_roll" value="&{template:skill}{{skill= Intimidation}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Cha} - 10) /2)) + @{Intimidation-Level}) ]] }}">Intimidation (cha)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Intimidation-Level" value="0"/></th>
                 </tr>
 				<tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Bluff-skill_roll" value="&{template:skill}{{skill= Bluff}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Bluff-Attribute} - 10) /2  + @{Bluff-Misc} ]] }}">Bluff</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Bluff-Attribute" value="@{Cha}"/>Cha</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Bluff-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Bluff-skill_roll" value="&{template:skill}{{skill= Bluff}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Cha} - 10) /2)) + @{Bluff-Level}) ]] }}">Bluff (cha)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Bluff-Level" value="0"/></th>
                 </tr>
 				<tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Deception-skill_roll" value="&{template:skill}{{skill= Deception}} {{character= @{character_name}}} {{Roll= [[ (d20 + floor((@{Deception-Attribute} - 10) /2  + @{Deception-Misc} ]] }}">Deception</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Deception-Attribute" value="@{Cha}"/>Cha</th>
-                    <th><input type="number" class="sheet-Current" name="attr_Deception-Misc" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Deception-skill_roll" value="&{template:skill}{{skill= Deception}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Cha} - 10) /2)) + @{Deception-Level}) ]] }}">Deception (cha)</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Deception-Level" value="0"/></th>
                 </tr>
             </table>
         </div>
         
         <div class='sheet-col'>
-            <h4>General Skills</h4>
+            <h4>Unique Skills</h4>
             <table class="sheet-table">
                 <tr>
                     <th style="width:160px;">Roll</th>
                     <th style="width:130px;">Skill</th>
                     <th style="width:60px;">Level</th>
                     <th style="width:60px;">Attribute</th>
-                    <th style="width:60px;">Misc</th>
                 </tr>
             </table>
             <fieldset class="repeating_skills1">
                 <table class="sheet-table">
                     <tr>
-                        <th><button type="roll" class="sheet-skillbtn" name="attr_random1-skill_roll" value="&{template:skill}{{skill= @{random1-name}}}  {{character= @{character_name}}} {{Roll= [[d20 + floor((@{random1-Attribute} - 10) / 2) + @{random1-Misc} ]] }}"></button></th>
+                        <th><button type="roll" class="sheet-skillbtn" name="attr_random1-skill_roll" value="&{template:skill}{{skill= @{random1-name}}}  {{character= @{character_name}}} {{Roll= [[d20 + floor((@{random1-Attribute} - 10) / 2) ]] }}"></button></th>
                         <th><input type="text" class="sheet-Current" name="attr_random1-name" style="width:100px;" placeholder="Skill Name"/></th>
+                        <th><input type="number" class="sheet-Current" name="attr_random1-name" style="width:100px;" value="random1-Level"/></th>
                         <th><select class="sheet-Current" name="attr_random1-Attribute">
                             <option value="@{Int}">Int</option>
                         <option value="@{Ins}">Ins</option>
@@ -260,7 +236,6 @@
                         <option value="@{Str}">Str</option>
                         <option value="@{Cha}">Cha</option>
                         </select></th>
-                        <th><input type="number" class="sheet-Current" name="attr_random1-Misc" value="0"/></th>
                     </tr>
                 </table>
             </fieldset>
@@ -273,12 +248,12 @@
         <h3>Equipment</h3>
     <div class='sheet-2colrow'>
         <div class='sheet-col'>
-            <h4>Gear Carried</h4>
+            <h4>Equipment Carried</h4>
             <fieldset class="repeating_Gear">
                 <table class="sheet-table">
                     <tr>
-                        <td><button type="roll" class="sheet-skillbtn" name="attr_Gear_carried-show" value="@{Gear_carried-name} @{Gear_carried-details}">Show</button></td>
-                        <td><input type="text" class="sheet-Current" name="attr_Gear_carried-name" placeholder="Gear Name"/></td>
+                        <td><button type="roll" class="sheet-skillbtn" name="attr_Equipment_carried-show" value="@{Equipment_carried-name} @{Gear_carried-details}">Show</button></td>
+                        <td><input type="text" class="sheet-Current" name="attr_Equipment_carried-name" placeholder="Gear Name"/></td>
                         <td><input type="number" class="sheet-Current" name="attr_Gear_carried-cost" placeholder="Cost"/></td>
                     </tr>
                     <tr>
@@ -289,25 +264,7 @@
                 </table>
             </fieldset>
         </div>
-        <div class='sheet-col'>
-            <h4>Equipment Owned</h4>
-            <fieldset class="repeating_Owned">
-                <table>
-                    <tr>
-                        <td><button type="roll" class="sheet-skillbtn" name="attr_Gear_owned-show" value="@{Gear_owned-name} @{Gear_owned-details}">Show</button></td>
-                        <td><input type="text" class="sheet-Current" name="attr_Gear_owned-name" placeholder="Gear Name"/></td>
-                        <td><input type="number" class="sheet-Current" name="attr_Gear_owned-cost" placeholder="Cost"/></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">
-                            <textarea class="sheet-longnotes" name="attr_Gear_owned-details" wrap="soft" placeholder="Gear Details"></textarea>
-                        </td>
-                    </tr>
-                </table>
-            </fieldset>
-        </div>
-    </div>
-    
+    </div>    
 </div>
 <!-- Tab 5 Combat -->
 <div class="sheet-section-5">
@@ -343,14 +300,12 @@
                         <tr>                            
                             <th>Bonus</th>
                             <th>Range</th>
-                            <th>Damage Class</th>
                             <th>Damage Die</th>
                         </tr>
                         <tr>
                             <th><input type="number" class="sheet-Current" name="attr_weapon-Bonus" value="0"/></th>
                             <th><input type="number" class="sheet-Current" name="attr_weapon-Range" value="0"/></th>
-                            <th><input type="number" class="sheet-Current" name="attr_weapon-Damage_Class" value="0"/></th>
-                            <th><select class="sheet-Current" name="attr_Damage-Die">
+                            <th><select class="sheet-Current" name="attr_weapon-Damage-Die">
 							<option value="d100">d100</option>
 							<option value="d20">d20</option>
 							<option value="d12">d12</option>
