@@ -60,10 +60,10 @@
 <span class="sheet-tab sheet-tab1" style='line-height: 20px;'>Attributes</span>
 <input type="radio" class="sheet-tab sheet-tab2" name="attr_core-tab" value="2" title="Skills" /> 
 <span class="sheet-tab sheet-tab2" style='line-height: 20px;'>Skills</span>
-<input type="radio" class="sheet-tab sheet-tab4" name="attr_core-tab" value="5" title="Equipment" /> 
-<span class="sheet-tab sheet-tab4" style='line-height: 20px;'>Equipment</span>
-<input type="radio" class="sheet-tab sheet-tab5" name="attr_core-tab" value="5" title="Combat" /> 
-<span class="sheet-tab sheet-tab5" style='line-height: 20px;'>Combat</span>
+<input type="radio" class="sheet-tab sheet-tab3" name="attr_core-tab" value="3" title="Equipment" /> 
+<span class="sheet-tab sheet-tab3" style='line-height: 20px;'>Equipment</span>
+<input type="radio" class="sheet-tab sheet-tab4" name="attr_core-tab" value="4" title="Combat" /> 
+<span class="sheet-tab sheet-tab4" style='line-height: 20px;'>Combat</span>
 <input type="radio" class="sheet-tab sheet-tab99" name="attr_core-tab" value="99" title="All" />
 <span class="sheet-tab sheet-tab99" style='line-height: 20px;'>All</span>    
 <br><br>
@@ -80,27 +80,27 @@
                 </tr>
                 <tr>
                     <th><button type="roll" class="sheet-skillbtn" name="attr_Intelligence_roll" value="[[d20 + floor(([[@{Int}]] - 10) /2) ]]" title="Intelligence">Int</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Int" value="0"/></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Int" value="10"/></th>
                 </tr>
                 <tr>
                     <th><button type="roll" class="sheet-skillbtn" name="attr_Instict_roll" value="[[d20 + floor(([[@{Ins}]] - 10) /2) ]]" title="Willpower">Ins</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Ins" value="0"/></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Ins" value="10"/></th>
                 </tr>
                 <tr>
                     <th><button type="roll" class="sheet-skillbtn" name="attr_Dexterity_roll" value="[[d20 + floor(([[@{Dex}]] - 10) /2) ]]" title="Dexterity">Dex</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Dex" value="0"/></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Dex" value="10"/></th>
                 </tr>
                 <tr>
                     <th><button type="roll" class="sheet-skillbtn" name="attr_Constitution_roll" value="[[d20 + floor(([[@{Con}]] - 10) /2) ]]" title="Constitution">Con</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Con" value="0"/></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Con" value="10"/></th>
                 </tr>
                 <tr>
                      <th><button type="roll" class="sheet-skillbtn" name="attr_Strength_roll" value="[[d20 + floor(([[@{Str}]] - 10) /2) ]]" title="Strength">Str</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Str" value="0"/></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Str" value="10"/></th>
                 </tr>
                 <tr>                    
                     <th><button type="roll" class="sheet-skillbtn" name="attr_Cha_roll" value="[[d20 + floor(([[@{Cha}]] - 10) /2) ]]" title="Charisma">Cha</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Cha" value="0"/></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Cha" value="10"/></th>
                 </tr>
                 </tr>
             </table>
@@ -219,15 +219,15 @@
                     <th style="width:160px;">Roll</th>
                     <th style="width:130px;">Skill</th>
                     <th style="width:60px;">Level</th>
-                    <th style="width:60px;">Attribute</th>
+                    <th style="width:60px;">Attr</th>
                 </tr>
             </table>
             <fieldset class="repeating_skills1">
                 <table class="sheet-table">
                     <tr>
-                        <th><button type="roll" class="sheet-skillbtn" name="attr_random1-skill_roll" value="&{template:skill}{{skill= @{random1-name}}}  {{character= @{character_name}}} {{Roll= [[d20 + floor((@{random1-Attribute} - 10) / 2) ]] }}"></button></th>
+                        <th><button type="roll" class="sheet-skillbtn" name="attr_random1-skill_roll" value="&{template:skill}{{skill= @{random1-name}}}  {{character= @{character_name}}} {{Roll= [[d20 + floor((@{random1-Attribute} - 10) / 2) + random1-Level]] }}"></button></th>
                         <th><input type="text" class="sheet-Current" name="attr_random1-name" style="width:100px;" placeholder="Skill Name"/></th>
-                        <th><input type="number" class="sheet-Current" name="attr_random1-name" style="width:100px;" value="random1-Level"/></th>
+                        <th><input type="number" class="sheet-Current" name="attr_random1-Level" style="width:100px;" value="1"/></th>
                         <th><select class="sheet-Current" name="attr_random1-Attribute">
                             <option value="@{Int}">Int</option>
                         <option value="@{Ins}">Ins</option>
@@ -243,8 +243,8 @@
     </div>
 </div>
 
-<!-- Tab 4 Equipment -->
-<div class="sheet-section-4">
+<!-- Tab 3 Equipment -->
+<div class="sheet-section-3">
         <h3>Equipment</h3>
     <div class='sheet-2colrow'>
         <div class='sheet-col'>
@@ -253,12 +253,12 @@
                 <table class="sheet-table">
                     <tr>
                         <td><button type="roll" class="sheet-skillbtn" name="attr_Equipment_carried-show" value="@{Equipment_carried-name} @{Gear_carried-details}">Show</button></td>
-                        <td><input type="text" class="sheet-Current" name="attr_Equipment_carried-name" placeholder="Gear Name"/></td>
+                        <td><input type="text" class="sheet-Current" name="attr_Equipment_carried-name" placeholder="Equipment Name"/></td>
                         <td><input type="number" class="sheet-Current" name="attr_Gear_carried-cost" placeholder="Cost"/></td>
                     </tr>
                     <tr>
                         <td colspan="3">
-                            <textarea class="sheet-longnotes" name="attr_Gear_carried-details" wrap="soft" placeholder="Gear Details"></textarea>
+                            <textarea class="sheet-longnotes" name="attr_Gear_carried-details" wrap="soft" placeholder="Equipment Details"></textarea>
                         </td>
                     </tr>
                 </table>
@@ -266,8 +266,8 @@
         </div>
     </div>    
 </div>
-<!-- Tab 5 Combat -->
-<div class="sheet-section-5">
+<!-- Tab 4 Combat -->
+<div class="sheet-section-4">
     <div class='sheet-2colrow'>
         <h3>Combat</h3>
         <div class='sheet-col'>
@@ -289,8 +289,8 @@
             <fieldset class="repeating_Weapons">
                 <table>
                     <tr>
-                        <td><button type="roll" class="sheet-skillbtn" name="roll_weapon" value="&{template:attack}{{weapon= @{weapon-name}}}  {{character= @{character_name}}} {{attack= [[  d20 + @{weapon-Bonus} ]] }}{{damage= [[(@{weapon-Damage_Class})(@{weapon-Damage-Die})]]}} {{details= @{weapon-details}}}">Attack</button></td>
-                        <td><input type="text" class="sheet-Current" name="attr_weapon-name" placeholder="Gear Name"/></td>
+                        <td><button type="roll" class="sheet-skillbtn" name="roll_weapon" value="&{template:attack}{{weapon= @{weapon-name}}}  {{character= @{character_name}}} {{attack= [[  d20 + @{weapon-Bonus} ]] }}{{damage= [[(@{weapon-Damage-Die})]]}} {{details= @{weapon-details}}}">Attack</button></td>
+                        <td><input type="text" class="sheet-Current" name="attr_weapon-name" placeholder="Weapon Name"/></td>
                         <th><input type="checkbox" class="sheet-bigcheck" name="attr_weapon-show" value="1"/><span></span></th>
                     </tr>
                 </table>
