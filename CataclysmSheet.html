@@ -1,10 +1,4 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="Shet.css">
-</head>
-<body>
     <div class="sheet-top_half">
         <div class='sheet-3colrow'>
             <div class='sheet-col'>
@@ -25,7 +19,7 @@
 					<table>
 					<tr>
 						<th><input type="number" class="sheet-Current" name="attr_Current-EXP"/></th>
-						<th><label type="number" class="sheet-Current" name="attr_Total-EXP" value="@{Current-EXP} + (((@{Character-Level}) * ((@{Character-Level} - 1) / 8)) *1000)" /></th>
+						<th><label type="number" class="sheet-Current" name="attr_Total-EXP" >@{Current-EXP} + (((@{Character-Level}) * ((@{Character-Level} - 1) / 8)) *1000)</label></th>
 					</tr>
 					<tr>
 						<th>Current EXP</th>
@@ -174,7 +168,7 @@
                     <th><input type="number" class="sheet-Current" name="attr_Survival-Level" value="0"/></th>
                 </tr>
                 <tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Insight-skill_roll" value="&{template:skill}{{skill= Insight}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Ins} - 10) /2)) + @{Insight-Level}) ]] }}">Insighttton></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Insight-skill_roll" value="&{template:skill}{{skill= Insight}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Ins} - 10) /2)) + @{Insight-Level}) ]] }}">Insight</button></th>
                     <th><input type="number" class="sheet-Current" name="attr_Insight-Level" value="0"/></th>
                 </tr>
 				<tr>
@@ -182,7 +176,7 @@
                     <th><input type="number" class="sheet-Current" name="attr_Acrobatics-Level" value="0"/></th>
                 </tr>
 				<tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Stealth-skill_roll" value="&{template:skill}{{skill= Stealth}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Dex} - 10) /2)) + @{Stealth-Level}) ]] }}">Stealthtton></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Stealth-skill_roll" value="&{template:skill}{{skill= Stealth}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Dex} - 10) /2)) + @{Stealth-Level}) ]] }}">Stealth</button></th>
                     <th><input type="number" class="sheet-Current" name="attr_Stealth-Level" value="0"/></th>
                 </tr>
 				<tr>
@@ -381,4 +375,3 @@
             <td class="sheet-last">{{Details}}</td>
         </tr>
 </rolltemplate>
-</body>
