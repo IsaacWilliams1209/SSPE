@@ -84,7 +84,7 @@ div.sheet-core-content {
 }
 
 .charsheet input.sheet-tab {
-    width: 100px;
+    width: 120px;
     height: 20px;
     cursor: pointer;    
     position: relative;
@@ -107,7 +107,7 @@ div.sheet-core-content {
     border: 2px solid #000;
     box-shadow: inset 0px 0px 10px yellow;
 	
-	width: 100px; 
+	width: 120px; 
     height: 20px; 
     cursor: pointer;	
 	position: relative;
@@ -306,7 +306,7 @@ select.sheet-Current {
     padding-top:0;
 }
 
-select.sheet-Current2 { 
+input.sheet-Current2 { 
     width:120px;
     margin-bottom: 0;
 	font-size: 24px;
@@ -331,6 +331,22 @@ select.sheet-Current2 {
     background: white;
     box-shadow: inset 0px 0px 10px #0000ff;
 }
+
+.sheet-Current2 {
+    border: 1px solid #000;
+    border-radius:5px;
+    box-shadow:none;
+    text-align:center;
+
+    color: #0000ff;
+    font-weight:bold;
+    font-size:1.2em;
+    font-family: "Orbitron", sans-serif;
+    
+    background: white;
+    box-shadow: inset 0px 0px 10px #0000ff;
+}
+
 .sheet-smaller {
     font-size:0.8em
 }
