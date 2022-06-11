@@ -10,10 +10,58 @@
                         <th>Character Name</th>
                     </tr>
                     <tr>
-                        <th><input type="text" class="sheet-text" name="attr_character_class" style="width:100%"/></th> <th><input type="number" class="sheet-Current" name="attr_Character-Level" value="1"/></th>
+                        <th>
+							<select  class="sheet-Current" name="attr_Character-Class">
+								<option value="Spy">Spy</option>
+								<option value="Engineer">Engineer</option>
+								<option value="Pilot">Pilot</option>
+								<option value="Technician">Technician</option>
+								<option value="Netrunner">Netrunner</option>
+								<option value="Mercenary">Mercenary</option>
+								<option value="Politician">Politician</option>
+							</select>
+						</th>
+						<th>
+						<select   class="sheet-Current" name="attr_Character-Background">
+							<optgroup label="Spy">
+								<option value="Military Spy">Military Spy</option>
+								<option value="Corporate Spy">Corporate Spy</option>
+								<option value="Broker">Broker</option>
+							</optgroup>
+							<optgroup label="Engineer">
+								<option value="Ship-Breaker">Ship-Breaker</option>
+								<option value="Naval Engineer">Naval Engineer</option>
+							</optgroup>
+							<optgroup label="Pilot">
+								<option value="Civilian">Civilian</option>
+								<option value="Naval Pilot">Naval Pilot</option>
+								<option value="Racer">Racer</option>
+							</optgroup>
+							<optgroup label="Technician">
+								<option value="Naval Tech">Naval Tech</option>
+								<option value="Systems Specialist">Systems Specialist</option>
+								<option value="Hacker">Hacker</option>
+							</optgroup>
+							<optgroup label="Netrunner">
+								<option value="Nomad">Nomad</option>
+								<option value="Broker">Broker</option>
+								<option value="Hacker">Hacker</option>
+							</optgroup>
+							<optgroup label="Mercenary">
+								<option value="Bounty Hunter">Bounty Hunter</option>
+								<option value="Ex-Marine">Ex-Marine</option>
+								<option value="Medic">Medic</option>
+							</optgroup>
+							<optgroup label="Politician">
+								<option value="Diplomat">Diplomat</option>
+								<option value="Ambassador">Ambassador</option>
+							</optgroup>
+							</select>
+						</th>
+						<th><input type="number" class="sheet-Current" name="attr_Character-Level" value="1"/></th>
                     </tr>
                     <tr>
-                        <th>Class</th> <th>Level</th>
+                        <th>Class</th> <th>Background</th> <th>Level</th>
                     </tr>
 					</table>
 					<table>
