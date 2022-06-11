@@ -305,6 +305,18 @@ select.sheet-Current {
     text-overflow: ''; 
     padding-top:0;
 }
+
+select.sheet-Current2 { 
+    width:120px;
+    margin-bottom: 0;
+	font-size: 24px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: ''; 
+    padding-top:0;
+}
+
 .sheet-Current {
     border: 1px solid #000;
     border-radius:5px;
