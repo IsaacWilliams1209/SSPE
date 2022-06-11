@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" href="Shet.css">
-</head>
-<body>
+
     <div class="sheet-top_half">
         <div class='sheet-3colrow'>
             <div class='sheet-col'>
@@ -24,7 +19,7 @@
 					<table>
 					<tr>
 						<th><input type="number" class="sheet-Current2" name="attr_Current-EXP"/></th>
-						<th><input type="number" class="sheet-Current2" name="attr_Total-EXP" value="@{Current-EXP} + (((@{Character-Level}) * ((@{Character-Level} - 1) / 8)) *1000)" disabled/></th>
+						<th><input type="number" class="sheet-Current2" name="attr_Total-EXP" value="@{Current-EXP} + (((@{Character-Level}+1) * ((@{Character-Level}) / 8)) *1000)" disabled/></th>
 					</tr>
 					<tr>
 						<th>Current EXP</th>
@@ -380,5 +375,3 @@
             <td class="sheet-last">{{Details}}</td>
         </tr>
 </rolltemplate>
-</body>
-</html>
