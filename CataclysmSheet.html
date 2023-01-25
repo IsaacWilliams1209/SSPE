@@ -261,8 +261,8 @@
                     <th><input type="number" class="sheet-Current" name="attr_Intimidation-Level" value="0"/></th>
                 </tr>
 				<tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Bluff-skill_roll" value="&{template:skill}{{skill= Bluff}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Cha} - 10) /2)) + @{Bluff-Level}) ]] }}">Bluff</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Bluff-Level" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Performance-skill_roll" value="&{template:skill}{{skill= Performance}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Cha} - 10) /2)) + @{Performance-Level}) ]] }}">Performance</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Performance-Level" value="0"/></th>
                 </tr>
 				<tr>
                     <th><button type="roll" class="sheet-skillbtn" name="attr_Deception-skill_roll" value="&{template:skill}{{skill= Deception}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Cha} - 10) /2)) + @{Deception-Level}) ]] }}">Deception</button></th>
@@ -323,9 +323,8 @@
             <fieldset class="repeating_Gear">
                 <table class="sheet-table">
                     <tr>
-                        <td><button type="roll" class="sheet-skillbtn" name="attr_Equipment_carried-show" value="@{Equipment_carried-name} @{Gear_carried-details}">Show</button></td>
                         <td><input type="text" class="sheet-Current" name="attr_Equipment_carried-name" placeholder="Equipment Name"/></td>
-                        <td><input type="number" class="sheet-Current" name="attr_Gear_carried-cost" placeholder="Cost"/></td>
+                        <td><input type="number" class="sheet-Current" name="attr_Gear_carried-cost" style="width:120px" placeholder="Cost"/></td>
                     </tr>
                     <tr>
                         <td colspan="3">
