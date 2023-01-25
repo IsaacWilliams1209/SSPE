@@ -39,7 +39,7 @@
 /*----------- Top Half -------------*/
 .sheet-top_half {
     background-size:840px;
-    background:black;
+    background-color: #1F1F1F;
     color:white;
 }
 
@@ -52,7 +52,7 @@
 }
 /*----------- Tabs Setup -------------*/
 .charsheet {
-    background:black;
+    background-color: #1F1F1F;
     color:white;
 }
 div.sheet-core-content { 
