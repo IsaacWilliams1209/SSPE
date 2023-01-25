@@ -382,7 +382,7 @@ textarea.sheet-notes {
     height:35px;
     resize:vertical;
     font-family: "Orbitron", sans-serif;
-	font-weight: 600;
+	font-weight: 900;
 }
 
 textarea.sheet-longnotes {
@@ -391,7 +391,7 @@ textarea.sheet-longnotes {
     height:105px;
     resize:vertical;
     font-family: "Orbitron", sans-serif;
-	font-weight: 600;
+	font-weight: 900;
 }
 /*========== Hiding Stuff ==========*/
 input.sheet-hider:not(:checked) ~ div.sheet-hold {
