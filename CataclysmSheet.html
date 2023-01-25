@@ -272,6 +272,14 @@
         </div>
         
         <div class='sheet-col'>
+			<table class="sheet-table">
+				<tr>
+					<th>Improvement Points</th>
+				</tr>
+				<tr>
+					<th><input type="number" class="sheet-Current" name="attr_Improvement_Points" value="0"/></th>
+				</tr>
+			</table>
             <h4>Unique Skills</h4>
             <table class="sheet-table">
                 <tr>
@@ -348,7 +356,7 @@
             <fieldset class="repeating_Weapons">
                 <table>
                     <tr>
-                        <td><button type="roll" class="sheet-skillbtn" name="roll_weapon" value="&{template:attack}{{weapon= @{weapon-name}}}  {{character= @{character_name}}} {{attack= [[  d20 + @{weapon-Bonus} ]] }}{{damage= [[(@{weapon-Damage-Die})]]}} {{details= @{weapon-details}}}">Attack</button></td>
+                        <td><button type="roll" class="sheet-skillbtn" name="roll_weapon" value="&{template:attack}{{weapon= @{weapon-name}}}  {{character= @{character_name}}} {{attack= [[  d20 + @{weapon-Bonus} ]] }}{{damage= [[(@{weapon-Damage-Die} + @{weapon-Damage-Bonus)]]}} {{details= @{weapon-details}}}">Attack</button></td>
                         <td><input type="text" class="sheet-Current" name="attr_weapon-name" placeholder="Weapon Name"/></td>
                         <th><input type="checkbox" class="sheet-bigcheck" name="attr_weapon-show" value="1"/><span></span></th>
                     </tr>
@@ -357,13 +365,13 @@
                 <div class="sheet-hold">
                     <table class="sheet-table">
                         <tr>                            
-                            <th>Bonus</th>
-                            <th>Range</th>
+                            <th>Roll Bonus</th>
+                            <th>Damage Bonus</th>
                             <th>Damage Die</th>
                         </tr>
                         <tr>
-                            <th><input type="number" class="sheet-Current" name="attr_weapon-Bonus" value="0"/></th>
-                            <th><input type="number" class="sheet-Current" name="attr_weapon-Range" value="0"/></th>
+                            <th><input type="number" class="sheet-Current" name="attr_weapon-Roll-Bonus" value="0"/></th>
+                            <th><input type="number" class="sheet-Current" name="attr_weapon-Damage-Bonus" value="0"/></th>
                             <th><select class="sheet-Current" name="attr_weapon-Damage-Die">
 							<option value="d100">d100</option>
 							<option value="d20">d20</option>
