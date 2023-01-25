@@ -1,22 +1,70 @@
+<!DOCTYPE html>
 
-    <div class="sheet-top_half">
+<head>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nova+Square">
+	<link rel="stylesheet" href="Shet.css">
+</head>
+    
+	
+	<div class="sheet-top_half">
         <div class='sheet-3colrow'>
             <div class='sheet-col'>
                 <table class="sheet-table" style="width:100%">
                     <tr>
                         <th><input type="text" class="sheet-title" name="attr_character_name" style="width:100%"/></th>
                     </tr>
+				</table>
+				<table class="sheet-table">
                     <tr>
                         <th>Character Name</th>
                     </tr>
                     <tr>
-                        <th><input type="text" class="sheet-text" name="attr_character_class" style="width:100%"/></th> <th><input type="number" class="sheet-Current" name="attr_Character-Level" value="1"/></th>
+                        <th>
+							<select  class="sheet-Current" name="attr_Character-Class" style="width:100%">
+								<option value="Spy">Spy</option>
+								<option value="Engineer">Engineer</option>
+								<option value="Pilot">Pilot</option>
+								<option value="Technician">Technician</option>
+								<option value="Nomad">Nomad</option>
+								<option value="Gunner">Gunner</option>
+								<option value="Politician">Politician</option>
+							</select>
+						</th>
+						<th>
+						<select   class="sheet-Current" name="attr_Character-Background" style="width:100%">
+							<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; Spy</option>
+							<option value="Military">Military</option>
+							<option value="Corporate">Corporate</option>
+							<option value="Broker">Broker</option>
+							<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; Engineer</option>
+							<option value="Ship-Breaker">Ship-Breaker</option>
+							<option value="Military">Military</option>
+							<option value="Biomedical">Biomedical</option>
+							<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; Pilot</option>
+							<option value="Civilian">Civilian</option>
+							<option value="Military">Military</option>
+							<option value="Racer">Racer</option>
+							<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; Technician</option>
+							<option value="Netrunner">Netrunner</option>
+							<option value="Systems Specialist">Systems Specialist</option>
+							<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; Nomad</option>
+							<option value="Spacer">Spacer</option>
+							<option value="Colonist">Colonist</option>
+							<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; Gunner</option>
+							<option value="Bounty Hunter">Bounty Hunter</option>
+							<option value="Mercenary">Mercenary</option>
+							<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; Politician</option>
+							<option value="Diplomat">Diplomat</option>
+							<option value="Ambassador">Ambassador</option>
+							</select>
+						</th>
+						<th><input type="number" class="sheet-Current" name="attr_Character-Level" value="1"/></th>
                     </tr>
                     <tr>
-                        <th>Class</th> <th>Level</th>
+                        <th>Class</th> <th>Background</th> <th>Level</th>
                     </tr>
 					</table>
-					<table>
+					<table class="sheet-table">
 					<tr>
 						<th><input type="number" class="sheet-Current2" name="attr_Current-EXP" style="width:100%"/></th>
 						<th><input type="number" class="sheet-Current2" name="attr_Total-EXP"  style="width:100%" value="(((@{Character-Level}+1) * ((@{Character-Level}) / 8)) *1000)" disabled/></th>
@@ -28,13 +76,22 @@
                 </table>
             </div>
             <div class='sheet-col'>
-                <table> <!--------------------------------------------- COME BACK TO THIS ------------------------->
+                <table class="sheet-table"> <!--------------------------------------------- COME BACK TO THIS ------------------------->
 					<tr>
 						<th>Current HP</th>
 						<th>Total HP</th>
+					</tr>
 					<tr>
 						<th><input type="number" class="sheet-Current2" name="attr_Current-HP" style="width:100%" /></th>
-						<th><input type="number" class="sheet-Current2" name="attr_Total-HP" style="width:100%" /></th>
+						<th><input type="number" class="sheet-Current2" name="attr_Total-HP"  style="width:100%" value="(@{Con} + 10)" disabled/></th>
+					</tr>
+					<tr>
+						<th>Current AP</th>
+						<th>Total AP</th>
+					</tr>
+					<tr>
+						<th><input type="number" class="sheet-Current2" name="attr_Current-AP" style="width:100%" /></th>
+						<th><input type="number" class="sheet-Current2" name="attr_Total-AP" style="width:100%" value="(@{Armour-Class} * 2)" disabled/></th>
 					</tr>
 				</table> 
             </div>
@@ -196,16 +253,16 @@
                     <th><input type="number" class="sheet-Current" name="attr_Diplomacy-Level" value="0"/></th>
                 </tr>
 				<tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Bater-skill_roll" value="&{template:skill}{{skill= Bater}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Cha} - 10) /2)) + @{Bater-Level}) ]] }}">Bater</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Bater-Level" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Barter-skill_roll" value="&{template:skill}{{skill= Barter}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Cha} - 10) /2)) + @{Barter-Level}) ]] }}">Barter</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Barter-Level" value="0"/></th>
                 </tr>
 				<tr>
                     <th><button type="roll" class="sheet-skillbtn" name="attr_Intimidation-skill_roll" value="&{template:skill}{{skill= Intimidation}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Cha} - 10) /2)) + @{Intimidation-Level}) ]] }}">Intimidation</button></th>
                     <th><input type="number" class="sheet-Current" name="attr_Intimidation-Level" value="0"/></th>
                 </tr>
 				<tr>
-                    <th><button type="roll" class="sheet-skillbtn" name="attr_Bluff-skill_roll" value="&{template:skill}{{skill= Bluff}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Cha} - 10) /2)) + @{Bluff-Level}) ]] }}">Bluff</button></th>
-                    <th><input type="number" class="sheet-Current" name="attr_Bluff-Level" value="0"/></th>
+                    <th><button type="roll" class="sheet-skillbtn" name="attr_Performance-skill_roll" value="&{template:skill}{{skill= Performance}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Cha} - 10) /2)) + @{Performance-Level}) ]] }}">Performance</button></th>
+                    <th><input type="number" class="sheet-Current" name="attr_Performance-Level" value="0"/></th>
                 </tr>
 				<tr>
                     <th><button type="roll" class="sheet-skillbtn" name="attr_Deception-skill_roll" value="&{template:skill}{{skill= Deception}} {{character= @{character_name}}} {{Roll= [[ floor(d20 + ((@{Cha} - 10) /2)) + @{Deception-Level}) ]] }}">Deception</button></th>
@@ -215,6 +272,18 @@
         </div>
         
         <div class='sheet-col'>
+			<div class='sheet-2colrow'>
+				<div class='sheet-col'>
+					<table class="sheet-table">
+					<tr>
+						<th>Improvement Points</th>
+					</tr>
+					<tr>
+						<th><input type="number" class="sheet-Current" name="attr_Improvement_Points" value="0"/></th>
+					</tr>
+				</div>
+			</div>
+			</table>
             <h4>Unique Skills</h4>
             <table class="sheet-table">
                 <tr>
@@ -254,9 +323,8 @@
             <fieldset class="repeating_Gear">
                 <table class="sheet-table">
                     <tr>
-                        <td><button type="roll" class="sheet-skillbtn" name="attr_Equipment_carried-show" value="@{Equipment_carried-name} @{Gear_carried-details}">Show</button></td>
                         <td><input type="text" class="sheet-Current" name="attr_Equipment_carried-name" placeholder="Equipment Name"/></td>
-                        <td><input type="number" class="sheet-Current" name="attr_Gear_carried-cost" placeholder="Cost"/></td>
+                        <td><input type="number" class="sheet-Current" name="attr_Gear_carried-cost" style="width:120px" placeholder="Cost"/></td>
                     </tr>
                     <tr>
                         <td colspan="3">
@@ -291,7 +359,7 @@
             <fieldset class="repeating_Weapons">
                 <table>
                     <tr>
-                        <td><button type="roll" class="sheet-skillbtn" name="roll_weapon" value="&{template:attack}{{weapon= @{weapon-name}}}  {{character= @{character_name}}} {{attack= [[  d20 + @{weapon-Bonus} ]] }}{{damage= [[(@{weapon-Damage-Die})]]}} {{details= @{weapon-details}}}">Attack</button></td>
+                        <td><button type="roll" class="sheet-skillbtn" name="roll_weapon" value="&{template:attack}{{weapon= @{weapon-name}}}  {{character= @{character_name}}} {{attack= [[  d20 + @{weapon-Roll-Bonus} ]] }}{{damage= [[(@{weapon-Damage-Die} + @{weapon-Damage-Bonus})]]}} {{details= @{weapon-details}}}">Attack</button></td>
                         <td><input type="text" class="sheet-Current" name="attr_weapon-name" placeholder="Weapon Name"/></td>
                         <th><input type="checkbox" class="sheet-bigcheck" name="attr_weapon-show" value="1"/><span></span></th>
                     </tr>
@@ -300,13 +368,13 @@
                 <div class="sheet-hold">
                     <table class="sheet-table">
                         <tr>                            
-                            <th>Bonus</th>
-                            <th>Range</th>
+                            <th style="padding-right:20px" >Roll Bonus</th>
+                            <th style="padding-right:20px" >Damage Bonus</th>
                             <th>Damage Die</th>
                         </tr>
                         <tr>
-                            <th><input type="number" class="sheet-Current" name="attr_weapon-Bonus" value="0"/></th>
-                            <th><input type="number" class="sheet-Current" name="attr_weapon-Range" value="0"/></th>
+                            <th><input type="number" class="sheet-Current" name="attr_weapon-Roll-Bonus" value="0"/></th>
+                            <th><input type="number" class="sheet-Current" name="attr_weapon-Damage-Bonus" value="0"/></th>
                             <th><select class="sheet-Current" name="attr_weapon-Damage-Die">
 							<option value="d100">d100</option>
 							<option value="d20">d20</option>

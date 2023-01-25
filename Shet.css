@@ -1,11 +1,5 @@
 
-@font-face {
-  font-family: 'Orbitron';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/orbitron/v24/yMJMMIlzdpvBhQQL_SC3X9yhF25-T1nyGy6BoWgz.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+
 /*----------- Repeating Blocks -------------*/
 .charsheet .repcontrol_add {
     display: block;
@@ -17,7 +11,7 @@
     margin-bottom:0px;
     font-size:0.9em;
     height:2.2em;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
 }
 .charsheet .repcontrol_edit
 {
@@ -30,7 +24,7 @@
     margin-bottom:5px;
     font-size:0.9em;
     height:2.2em;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
 }
 .charsheet .repcontrol_del {
     background:red;
@@ -45,7 +39,7 @@
 /*----------- Top Half -------------*/
 .sheet-top_half {
     background-size:840px;
-    background:black;
+    background-color: #1F1F1F;
     color:white;
 }
 
@@ -58,7 +52,7 @@
 }
 /*----------- Tabs Setup -------------*/
 .charsheet {
-    background:black;
+    background-color: #1F1F1F;
     color:white;
 }
 div.sheet-core-content { 
@@ -90,7 +84,6 @@ div.sheet-core-content {
     position: relative;
     opacity: 0;
 	z-index: 9999;
-    box-shadow: 0px 0px 5px blue;
 }
 
 .charsheet span.sheet-tab {
@@ -101,11 +94,10 @@ div.sheet-core-content {
     background:white;
 	color: black; 
 	font-weight: bold;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
     font-variant: small-caps;
 	border-radius: 4px;
     border: 2px solid #000;
-    box-shadow: inset 0px 0px 10px yellow;
 	
 	width: 120px; 
     height: 20px; 
@@ -127,7 +119,6 @@ div.sheet-core-content {
     color: white; /*originally white*/
 	border-radius: 4px;
     border: 2px solid yellow;
-    box-shadow: inset 0px 0px 10px #000;
 }
 
 /*----------- End Tab Setup -----------*/
@@ -148,7 +139,6 @@ input.sheet-radioselect[type="radio"]
     z-index: 1;
     opacity: 0;
     width:50px;
-    box-shadow: 0px 0px 5px green;
 }
 .charsheet input.sheet-radioselect:checked + span.sheet-radioselect {
     text-shadow: 0px 0px 2px green, 0px 0px 2px green, 0px 0px 2px green, 0px 0px 2px green, 0px 0px 2px green,0px 0px 5px yellow;
@@ -173,6 +163,7 @@ span.sheet-radioselect {
 .sheet-tableII th, 
 .sheet-table th {
     color:#fff;
+	font-family: "Nova Square", sans-serif;
     font-weight:bold;
     font-style: italic;
     font-variant: small-caps;
@@ -185,11 +176,13 @@ span.sheet-radioselect {
     border-radius:0px;
     box-shadow:none;
     background:transparent;
+	font-family: "Nova Square", sans-serif;
     color:white;
 }
 input.sheet-text[type="text"]:focus {
     border-bottom:1px solid #fff;
     border-radius:0px;
+	font-family: "Nova Square", sans-serif;
     box-shadow:none;
 }
 .sheet-title {
@@ -199,7 +192,7 @@ input.sheet-text[type="text"]:focus {
     border-radius:0px;
     box-shadow:none;
     font-size:1.8em;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
     text-align:center;
     background:transparent;
     color:white;
@@ -218,7 +211,7 @@ input.sheet-title[type="text"]:focus {
     border-bottom:1px solid #fff;
     border-radius:0px;
     box-shadow:none;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
     text-align:center;
 }
 .sheet-total {
@@ -231,7 +224,6 @@ input.sheet-title[type="text"]:focus {
     color:black;
     font-weight:bold;
     text-shadow: 5px 5px 5px silver, 5px 5px 5px silver, 0px 0px 5px white, 0px 0px 5px white, 0px 0px 5px white;
-    box-shadow: inset 0px 0px 15px gray, inset 0px 0px 15px gray, inset 0px 0px 15px gray;
 }
 .sheet-total[type=number]::-webkit-inner-spin-button, 
 .sheet-total[type=number]::-webkit-outer-spin-button { 
@@ -246,11 +238,10 @@ input.sheet-title[type="text"]:focus {
 
     font-weight:bold;
     font-size:1.2em;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
     
     background:white;
     color:black;
-    box-shadow: inset 0px 0px 10px yellow;
 }
 
 .sheet-Rating {
@@ -262,10 +253,9 @@ input.sheet-title[type="text"]:focus {
     color: black;
     font-weight:bold;
     font-size:1.2em;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
 
     background:white;
-    box-shadow: inset 0px 0px 10px #a52a2a;
 }
 .sheet-Rating[type="number"]:-ms-input-placeholder,
 .sheet-Specialty[type="number"]:-ms-input-placeholder{
@@ -325,10 +315,9 @@ input.sheet-Current2 {
     color: #0000ff;
     font-weight:bold;
     font-size:1.2em;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
     
     background: white;
-    box-shadow: inset 0px 0px 10px #0000ff;
 }
 
 .sheet-Current2 {
@@ -340,10 +329,9 @@ input.sheet-Current2 {
     color: #0000ff;
     font-weight:bold;
     font-size:1.2em;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
     
     background: white;
-    box-shadow: inset 0px 0px 10px #0000ff;
 }
 
 .sheet-smaller {
@@ -357,11 +345,11 @@ input.sheet-Current2 {
 }
 h3 {
     color:white;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
     text-align:center;
 }
 h4 {
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
     color: #fff;
     text-shadow: 0px 0px 10px yellow;
     font-weight:bold;
@@ -370,7 +358,7 @@ h4 {
 }
 
 h4.sheet-yellow {
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
     color: #fff;
     text-shadow: 0px 0px 10px yellow;
     font-weight:bold;
@@ -378,7 +366,7 @@ h4.sheet-yellow {
     font-variant:small-caps;
 }
 h4.sheet-blue {
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
     color: #fff;
     text-shadow: 0px 0px 10px #0000ff, 0px 0px 10px #0000ff;
     font-weight:bold;
@@ -390,8 +378,8 @@ textarea.sheet-notes {
     border: 1px solid #000;
     height:35px;
     resize:vertical;
-    box-shadow: inset  0px 0px 10px #0000ff;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
+	font-weight: 900;
 }
 
 textarea.sheet-longnotes {
@@ -399,8 +387,8 @@ textarea.sheet-longnotes {
     border: 1px solid #000;
     height:105px;
     resize:vertical;
-    box-shadow: inset  0px 0px 10px #0000ff;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
+	font-weight: 900;
 }
 /*========== Hiding Stuff ==========*/
 input.sheet-hider:not(:checked) ~ div.sheet-hold {
@@ -433,10 +421,6 @@ input.sheet-bigcheck[type="radio"] + span::before
     text-align: center;
     display: inline-block;
     vertical-align: middle;
-
-    -moz-box-shadow: 0 0 2px #2A4792;
-    -webkit-box-shadow: 0 0 2px #2A4792;
-    box-shadow: inset 0 0 8px #2A4792, inset 0 0 8px #2A4792;
 }
     
    
@@ -487,11 +471,7 @@ input.sheet-bigcheck[type="Checkbox"] + span::before {
     position: relative;
     top: 0px;
     left: -4px;
-
-    -moz-box-shadow: 0 0 2px #0000ff;
-    -webkit-box-shadow: 0 0 2px #0000ff;
     border:1px solid black;
-    box-shadow: inset 0 0 8px #0000ff, inset 0 0 8px #0000ff;
 }   
 input.sheet-bigcheck[type="Checkbox"] + span::before {
     content: "";
@@ -535,7 +515,7 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before {
     padding-left:20px;
     font-size:1em !important;  
     color: white;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
     text-shadow: 0px 0px 2px black, 0px 0px 2px black, 0px 0px 5px white,0px 0px 5px white,0px 0px 5px white;
 }
 .sheet-attribute button[type="roll"]:hover,
@@ -568,7 +548,7 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before {
     margin: 0;
     background: radial-gradient(circle at 0px 10px, white, gray);
     font-size:1em !important;  
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
     font-weight:bold;
     height:25px; 
     width: 120px; 
@@ -605,7 +585,7 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before {
     margin: 0;
     background: radial-gradient(circle at 0px 10px, red, black);
     font-size:1em !important;  
-    font-family: "Orbitron", sans-serif;
+    font-family: "Nova Square", sans-serif;
     font-weight:bold;
     height:25px; 
     width: 120px; 
@@ -630,8 +610,7 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before {
     border: 1px solid;
     color: black;
     font-size: 1em;
-    font-family: "Orbitron", sans-serif;
-    box-shadow: inset 0px 0px 30px rgba(44, 73, 146,1.8),inset 0px 0px 30px rgba(44, 73, 146,1.8);
+    font-family: "Nova Square", sans-serif;
     background: white;
 }
 
@@ -640,7 +619,6 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before {
     padding: 2px;
 	line-height: 1.6em;
 	font-size: 1.2em;
-    box-shadow: inset 0px 0px 30px rgba(44, 73, 146,1.8),inset 0px 0px 30px rgba(44, 73, 146,1.8);
 }
 
 .sheet-rolltemplate-skill td {
@@ -648,7 +626,6 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before {
 }
 
 .sheet-rolltemplate-skill td.sheet-detail {
-    box-shadow: inset 0px 20px -20px rgba(44, 73, 146,1.8),inset 0px 0px 30px rgba(44, 73, 146,1.8);
 }
 .sheet-rolltemplate-skill .inlinerollresult {
     background:transparent;
@@ -662,8 +639,7 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before {
     border: 1px solid;
     color: black;
     font-size: 1em;
-    font-family: "Orbitron", sans-serif;
-    box-shadow: inset 0px 0px 30px rgba(44, 73, 146,1.8),inset 0px 0px 30px rgba(44, 73, 146,1.8);
+    font-family: "Nova Square", sans-serif;
     background: white;
 }
 
@@ -672,7 +648,6 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before {
     padding: 2px;
     line-height: 1.6em;
 	font-size: 1.2em;
-    box-shadow: inset 0px 0px 30px rgba(44, 73, 146,1.8),inset 0px 0px 30px rgba(44, 73, 146,1.8);
 }
 
 .sheet-rolltemplate-attribute td {
@@ -680,7 +655,7 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before {
 }
 
 .sheet-rolltemplate-attribute td.sheet-detail {
-    box-shadow: inset 0px 20px -20px rgba(44, 73, 146,1.8),inset 0px 0px 30px rgba(44, 73, 146,1.8);
+	
 }
 .sheet-rolltemplate-attribute .inlinerollresult {
     background:transparent;
@@ -695,8 +670,7 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before {
     border: 1px solid;
     color: black;
     font-size: 1em;
-    font-family: "Orbitron", sans-serif;
-    box-shadow: inset 0px 0px 30px rgba(44, 73, 146,1.8),inset 0px 0px 30px rgba(44, 73, 146,1.8);
+    font-family: "Nova Square", sans-serif;
     background: white;
 }
 
@@ -705,7 +679,6 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before {
     padding: 2px;
     line-height: 1.6em;
     font-size: 1.2em;
-    box-shadow: inset 0px 0px 30px rgba(44, 73, 146,1.8),inset 0px 0px 30px rgba(44, 73, 146,1.8);
 }
 
 .sheet-rolltemplate-attack td {
@@ -713,7 +686,7 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before {
 }
 
 .sheet-rolltemplate-attack td.sheet-detail {
-    box-shadow: inset 0px 20px -20px rgba(44, 73, 146,1.8),inset 0px 0px 30px rgba(44, 73, 146,1.8);
+	
 }
 .sheet-rolltemplate-attack .inlinerollresult {
     background:transparent;
@@ -727,8 +700,7 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before {
     background:white;
     color: black;
     font-size: 1em;
-    font-family: "Orbitron", sans-serif;
-    box-shadow: inset 0px 0px 15px #0000ff,inset 0px 0px 15px #0000ff;
+    font-family: "Nova Square", sans-serif;
     border-radius: 25px;
     border-radius: 25px 25px 25px 25px;
 }
@@ -738,7 +710,6 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before {
     padding: 2px;
     line-height: 1.6em;
     font-size: 1.2em;
-    box-shadow: inset 0px 0px 15px #0000ff,inset 0px 0px 15px #0000ff;
     border-radius: 25px 25px 0px 0px;
 }
 
@@ -747,7 +718,7 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before {
 }
 
 .sheet-rolltemplate-show td.sheet-detail {
-    box-shadow: inset 0px 20px -20px #0000ff,inset 0px 0px 15px #0000ff;
+	
 }
 .sheet-rolltemplate-show td.sheet-last {
     border-radius: 0px 0px 25px 25px;
