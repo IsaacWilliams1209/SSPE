@@ -33,8 +33,8 @@
 						<th>
 						<select   class="sheet-Current" name="attr_Character-Background" style="width:100%">
 							<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; Spy</option>
-							<option value="Military Spy">Military Spy</option>
-							<option value="Corporate Spy">Corporate Spy</option>
+							<option value="Military">Military</option>
+							<option value="Corporate">Corporate</option>
 							<option value="Broker">Broker</option>
 							<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; Engineer</option>
 							<option value="Ship-Breaker">Ship-Breaker</option>
@@ -83,7 +83,7 @@
 					</tr>
 					<tr>
 						<th><input type="number" class="sheet-Current2" name="attr_Current-HP" style="width:100%" /></th>
-						<th><input type="number" class="sheet-Current2" name="attr_Total-HP" style="width:100%" /></th>
+						<th><input type="number" class="sheet-Current2" name="attr_Total-HP" value="(@{Con} + 10)" style="width:100%" /></th>
 					</tr>
 					<tr>
 						<th>Current AP</th>
