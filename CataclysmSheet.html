@@ -360,7 +360,7 @@
             <fieldset class="repeating_Weapons">
                 <table>
                     <tr>
-                        <td><button type="roll" class="sheet-skillbtn" name="roll_weapon" value="&{template:attack}{{weapon= @{weapon-name}}}  {{character= @{character_name}}} {{attack= [[  d20 + @{weapon-Bonus} ]] }}{{damage= [[(@{weapon-Damage-Die} + @{weapon-Damage-Bonus)]]}} {{details= @{weapon-details}}}">Attack</button></td>
+                        <td><button type="roll" class="sheet-skillbtn" name="roll_weapon" value="&{template:attack}{{weapon= @{weapon-name}}}  {{character= @{character_name}}} {{attack= [[  d20 + @{weapon-Roll-Bonus} ]] }}{{damage= [[(@{weapon-Damage-Die} + @{weapon-Damage-Bonus})]]}} {{details= @{weapon-details}}}">Attack</button></td>
                         <td><input type="text" class="sheet-Current" name="attr_weapon-name" placeholder="Weapon Name"/></td>
                         <th><input type="checkbox" class="sheet-bigcheck" name="attr_weapon-show" value="1"/><span></span></th>
                     </tr>
@@ -369,8 +369,8 @@
                 <div class="sheet-hold">
                     <table class="sheet-table">
                         <tr>                            
-                            <th>Roll Bonus</th>
-                            <th>Damage Bonus</th>
+                            <th style="padding-right:20px" >Roll Bonus</th>
+                            <th style="padding-right:20px" >Damage Bonus</th>
                             <th>Damage Die</th>
                         </tr>
                         <tr>
