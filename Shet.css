@@ -471,7 +471,7 @@ input.sheet-bigcheck[type="Checkbox"] + span::before {
     position: relative;
     top: 0px;
     left: -4px;
-    border:1px solid black;
+    border:1px solid white;
 }   
 input.sheet-bigcheck[type="Checkbox"] + span::before {
     content: "";
